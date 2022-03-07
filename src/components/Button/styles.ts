@@ -14,8 +14,7 @@ export const styles = StyleSheet.create({
 
     maxHeight: 34,
     minHeight: 30,
-    
-    
+
   },
 
   text: {
