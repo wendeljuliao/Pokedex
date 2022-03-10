@@ -31,6 +31,7 @@ const Card = ({ id, name, types, image, color }: ICardProps) => {
                 item.type.name.charAt(0).toUpperCase() + item.type.name.slice(1)
               }
               color="#CBCBCB"
+              type="normal"
             />
           ))}
         </View>

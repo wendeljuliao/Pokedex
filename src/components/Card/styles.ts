@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
 
     flexDirection: "row",
     padding: 10,
+    marginVertical: 6,
   },
   leftSide: {
     width: "60%",

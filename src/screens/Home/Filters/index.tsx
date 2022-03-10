@@ -6,9 +6,13 @@ import { styles } from "./styles";
 
 import { AntDesign } from "@expo/vector-icons";
 import api from "../../../services/api";
+import { IFilterProps } from "./interface";
+import { useFilterContext } from "../../../context/FilterContext";
 
-export default function Filters() {
+export default function Filters({onPressSearch}: IFilterProps) {
   const [types, setTypes] = useState<any[]>([]);
+
+  const {name, setName} = useFilterContext();
 
   const colors: any = {
     normal: "#A8A77A",
@@ -38,6 +42,7 @@ export default function Filters() {
       setTypes(res.data.results);
     });
   }, []);
+  
 
   return (
     <View style={styles.container}>
@@ -47,8 +52,8 @@ export default function Filters() {
 
       <View style={styles.primaryFilter}>
         <View style={styles.searchView}>
-          <AntDesign name="search1" size={24} color="black" />
-          <TextInput style={styles.input} placeholder="Nome do Pokémon" />
+          <AntDesign name="search1" size={24} color="black" onPress={onPressSearch} />
+          <TextInput style={styles.input} placeholder="Nome do Pokémon" value={name} onChangeText={text => setName(text)}/>
         </View>
 
         <Button
@@ -59,18 +64,6 @@ export default function Filters() {
       </View>
 
       <View style={styles.secundaryFilter}>
-        {/* <FlatList
-          data={data}
-          keyExtractor={(item, index) => item.title + index}
-          numColumns={4}
-          renderItem={({ item }) => {
-            return (
-              <View style={{ marginRight: 6, marginBottom: 6 }}>
-                <Button title={item.title} />
-              </View>
-            );
-          }}
-        /> */}
 
         {types.map((item, index) => (
           <View key={index} style={{ marginRight: 6, marginBottom: 6 }}>

@@ -3,4 +3,5 @@ export interface IButtonProps {
   iconLeft?: any;
   iconRight?: any;
   color: string;
+  type?: string;
 }

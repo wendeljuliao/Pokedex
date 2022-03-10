@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
   },
   input: {
-    
+    height: '100%',
+
     backgroundColor: '#E2E2E2',
     fontSize: 14,
 
