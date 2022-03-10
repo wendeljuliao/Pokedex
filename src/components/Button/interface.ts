@@ -4,4 +4,5 @@ export interface IButtonProps {
   iconRight?: any;
   color: string;
   type?: string;
+  onPress?: () => void;
 }

@@ -60,6 +60,8 @@ export default function Filters({onPressSearch}: IFilterProps) {
           name={"Filtro"}
           iconLeft={<AntDesign name="plus" size={24} color="white" />}
           color={"#FD3C00"}
+          type={'filter'}
+          onPress={onPressSearch}
         />
       </View>
 

@@ -10,7 +10,8 @@ export default function Button({
   iconLeft,
   iconRight,
   color,
-  type
+  type,
+  onPress
 }: IButtonProps) {
 
   const [clicked, setClicked] = useState(false);
@@ -34,8 +35,22 @@ export default function Button({
     }
   }
 
+  function pressed() {
+    if (type === 'filter') {
+      if (onPress !== undefined)
+        onPress()
+        
+    } else if (type === 'next') {
+      if (onPress !== undefined)
+        onPress()
+    } else if (type === 'prev') {
+      if (onPress !== undefined)
+        onPress()
+    }
+  }
+
   return (
-    <Pressable onPress={!!iconLeft || !!iconRight ? null : handlePressed}
+    <Pressable onPress={!!iconLeft || !!iconRight ? pressed : handlePressed}
       style={({ pressed }) => [
         styles.buttonContainer,
         {

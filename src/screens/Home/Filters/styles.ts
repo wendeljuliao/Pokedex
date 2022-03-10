@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: '100%',
+    width: '80%',
 
     backgroundColor: '#E2E2E2',
     fontSize: 14,
